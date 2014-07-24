@@ -24,12 +24,22 @@
 (function () {
 	$.fn.hfconvert = function(config) {
 		/** @const 全角文字判定正規表現 */
-		var TO_HALF_REGEX = /[０-９]/g;
-		
+		var FULL_CHAR_REGEX = /[０-９]/g;
+
 		/** @var {object} デフォルトのオプション値 */
 		var defaults = {
 			fire: 'change'
 		};
+
+		/**
+		 * 全角文字列を半角文字列に変換
+		 *
+		 * @param {string} char
+		 * @return {string}
+		 */
+		function convertFull2Half(char) {
+			return String.fromCharCode(char.charCodeAt(0) - 0xFEE0);
+		}
 
 		/**
 		 * 全角→半角変換ハンドラ
@@ -37,18 +47,16 @@
 		 * @param {object} e
 		 * @return void
 		 */
-		function toHalf(e) {
-			var $target = $(e.target),
-				val = $target.val();
-
-			var changed_val = val.replace('ー', '-').replace(TO_HALF_REGEX, function(s) {
-				return String.fromCharCode(s.charCodeAt(0) - 0xFEE0);
-			});
-
+		function full2halfHundler(e) {
+			var $target = $(e.target);
+			var changed_val = $target
+								.val()
+								.replace(/ー/g, '-')
+								.replace(FULL_CHAR_REGEX, convertFull2Half);
 			$target.val(changed_val);
 		}
 
 		var option = $.extend(defaults, config);
-		$(this).bind(option.fire, toHalf);
+		$(this).bind(option.fire, full2halfHundler);
 	};
 })();

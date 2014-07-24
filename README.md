@@ -5,6 +5,20 @@ jquery-harf-full-converter.jsはユーザ入力された全角文字と半角文
 
 ※現時点では全角数字→半角数字の変換のみ対応しています。
 
+## 利用するために…
+
+既存Gitプロジェクトのsubmoduleとして利用することを前提に記載する。
+
+### インストール
+
+下記のコマンドを対象gitリポジトリ内で実行
+`git submodule add https://github.com/qwintet-dev/jquery-half-full-converter /path/to/dir`
+
+### アップデート
+
+下記のコマンドを対象gitリポジトリ内で実行
+`git submodule update`
+
 ## 使い方
 
 ### 基本
@@ -33,6 +47,12 @@ $('#full-to-half').hfconvert();
 $('#full-to-half').hfconvert({fire:'keyup'});
 </script>
 ```
+
+## テスト
+
+1. node.jsをインストールしておく。
+2. このリポジトリをcloneしたら`npm install --save-dev qunit`コマンドを実行してQunitをインストールする。
+3. tests/test.htmlをブラウザで読み込むことでテストが実行される。
 
 ## TODO
 
