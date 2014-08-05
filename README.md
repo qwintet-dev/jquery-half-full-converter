@@ -3,19 +3,15 @@
 jquery-harf-full-converter.jsはユーザ入力された全角文字と半角文字を変換する機能をjqueryのプラグインとして提供します。  
 このライブラリはUnicodeのみ対応です。
 
-## 利用するために…
+## インストール
 
-既存Gitプロジェクトのsubmoduleとして利用することを前提に記載する。
+ソースファイルをダウンロードするか、このリポジトリをcloneして利用します。  
 
-### インストール
-
-下記のコマンドを対象gitリポジトリ内で実行  
-`git submodule add https://github.com/qwintet-dev/jquery-half-full-converter /path/to/dir`
-
-### アップデート
-
-下記のコマンドを対象gitリポジトリ内で実行  
-`git submodule update`
+* 直接ダウンロードする場合
+`wget --no-check-certificate https://raw.githubusercontent.com/qwintet-dev/jquery-half-full-converter/master/jquery-half-full-converter.js`  
+  
+* リポジトリをcloneする場合  
+`git clone ssh://git@github.com/qwintet-dev/jquery-half-full-converter`
 
 ## 使い方
 
