@@ -7,7 +7,7 @@ jquery-harf-full-converter.jsはユーザ入力された全角文字と半角文
 
 ソースファイルをダウンロードするか、このリポジトリをcloneして利用します。  
 
-* 直接ダウンロードする場合
+* 直接ダウンロードする場合  
 `wget --no-check-certificate https://raw.githubusercontent.com/qwintet-dev/jquery-half-full-converter/master/jquery-half-full-converter.js`  
   
 * リポジトリをcloneする場合  
