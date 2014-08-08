@@ -86,7 +86,7 @@
 		 * （jsのデフォルトunicodeがutf16のため、utf8変換設定時のみ変換する）
 		 * 
 		 * @params {string} str 文字列
-		 @ @return {string}
+		 * @return {string}
 		 */
 		function encode(str) {
 			if (option.encode === 'utf8') {
@@ -165,7 +165,7 @@
 			} else if (option.proc === 'half2full') {
 				$self.bind(option.fire, half2fullHundler);
 			} else {
-				throw e;
+				throw 'illeagal process type.';
 			}
 
 			return $self;
